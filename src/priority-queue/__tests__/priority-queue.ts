@@ -45,6 +45,15 @@ describe("PriorityQueue", () => {
     expect(q.pop()).toBe(6);
   });
 
+  test("peek", () => {
+    const q = new PriorityQueue<number>();
+
+    for (let i = 10; i > 0; i--) {
+      q.push(i, i);
+      expect(q.peek()).toBe(i);
+    }
+  });
+
   test("it pushes in right order", () => {
     const q = new PriorityQueue<number>();
 
