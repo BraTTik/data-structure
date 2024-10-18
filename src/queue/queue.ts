@@ -1,8 +1,8 @@
 import { IQueue, QueueArgs } from "./interface";
 
 export class Queue<T> implements IQueue<T> {
-  private maxSize: number | null = null;
-  private items: Array<T> = [];
+  protected maxSize: number | null = null;
+  protected items: Array<T> = [];
 
   constructor(args?: QueueArgs<T>) {
     const { maxSize, items } = args ?? {};
