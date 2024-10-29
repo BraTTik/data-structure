@@ -40,4 +40,25 @@ describe("Linked List", () => {
     }
     expect(current).toBe(null);
   });
+
+  test("find", () => {
+    const l = new LinkedList<number>();
+    for (let i = 10; i > 0; i--) {
+      l.unshift(i);
+    }
+    expect(l.find(5)?.data).toBe(5);
+    expect(l.find(11)).toBe(null);
+  });
+
+  test("delete", () => {
+    const l = new LinkedList<number>();
+    for (let i = 10; i > 0; i--) {
+      l.unshift(i);
+    }
+    expect(l.delete(1)?.data).toBe(1);
+    expect(l.first()?.data).toBe(2);
+    expect(l.delete(5)).toEqual({ data: 5, next: null });
+    expect(l.delete(5)).toBe(null);
+    expect(l.delete(111)).toBe(null);
+  });
 });

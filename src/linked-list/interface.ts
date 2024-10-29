@@ -8,4 +8,6 @@ export interface ILinkedList<T> {
   isEmpty(): boolean;
   unshift(data: T): void;
   shift(): T | null;
+  find(data: T): ILinkedItem<T> | null;
+  delete(data: T): ILinkedItem<T> | null;
 }
